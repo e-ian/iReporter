@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UserPage</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+            <nav class="usernav-bar">
+                    <ul>
+                        <li><a href="#" class="btn">CREATE</a></li>
+                        <li><a href="#" class="btn">PROFILE</a></li>  
+                        <li><a href="signup.html" class="btn">SIGNUP</a></li>
+                        <li><a href="index.html" class="btn">LOGOUT</a></li>                                 
+                    </ul>
+            </nav>
+            <section class="Create-record">
+                    <form action="/index.html" class="login">
+                        <h3>Create Record</h3>
+                        <div><input type="text" placeholder="Record name" class="login-input"></div>
+                        <div><input type="date" placeholder="Date" class="login-input"></div>
+                        <div><textarea type="text" placeholder="Description" class="login-input-des"></textarea></div>
+                        <select class="login_input">
+                                <option value="men's-clothing">RedFlag</option>
+                                <option value="women's-clothing">Intervention</option>
+                            </select>
+                        <div class="text">Upload Image</div>
+                        <input class="login-input" type="file" name="img"/>
+                        <div><label class="text">Geolocation</label></div>
+                        <div class="geolocation">
+                        <input type="text" id="latitude" placeholder="latitude" class="login-input" required/>
+                        <input type="text" id="latitude" placeholder="longitude" class="login-input" required/>
+                        </div>  
+                        <div><button type="submit" class = "login-button">Create</button></div>
+                    </form>
+                </section>     
+    </div>    
+</body>
+</html>
+
