@@ -16,7 +16,7 @@ function login(){
             window.location.href ="admin.html";
         }
         else if(username == "user" && password == "emma123"){
-            window.location.href = "user.html";
+            window.location.href = "userprofile.html";
         }
     }
 }
