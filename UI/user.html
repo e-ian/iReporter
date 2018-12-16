@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UserPage</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+            <div class="header">            
+                    <div class="app-name">
+                        <h1>iReporter!</h1>
+                    </div>
+                    <div class="usernav-bar">
+                        <ul>                 
+                            <li><a href="userprofile.html" class="btn">PROFILE</a></li>
+                            <li><a href="records.html" class="btn">RECORDS</a></li>
+                            <li><a href="edit.html" class="btn">EDIT</a></li>
+        
+                        </ul>
+                    </div>
+                </div>
+            <div class="Create-record">
+                    <form action="/records.html" class="login">
+                        <h3>Create Record</h3>
+                        <div><input type="text" placeholder="Record name" class="login-input"></div>
+                        <div><input type="date" placeholder="Date" class="login-input"></div>
+                        <div><textarea type="text" placeholder="Description" class="login-input-des"></textarea></div>
+                        <select class="login_input">
+                                <option value="RedFlag">RedFlag</option>
+                                <option value="Intervention">Intervention</option>
+                            </select>
+                        <div class="text">Upload Image</div>
+                        <input class="login-input" type="file" name="img"/>
+                        <div><label class="text">Geolocation</label></div>
+                        <div class="geolocation">
+                        <input type="text" id="latitude" placeholder="latitude" class="login-input"/>
+                        <input type="text" id="latitude" placeholder="longitude" class="login-input"/>
+                        </div>  
+                        <div><button type="submit" class = "login-button">Create</button></div>
+                    </form>
+            </div>     
+    </div>    
+</body>
+</html>
+
