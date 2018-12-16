@@ -149,14 +149,6 @@ p{
     border: 0;
     border-radius: 4px;    
 }
-.deletebtn{
-    color: white;
-    background: red;
-    padding: 0.6rem 1.3rem;
-    border: 0;
-    border-radius: 4px;
-    margin-left: 40%;
-}
 .btn:hover{
     background: black;    
 }
