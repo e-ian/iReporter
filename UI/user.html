@@ -9,15 +9,20 @@
 </head>
 <body>
     <div class="container">
-            <nav class="usernav-bar">
-                    <ul>
-                        <li><a href="#" class="btn">CREATE</a></li>
-                        <li><a href="#" class="btn">PROFILE</a></li>  
-                        <li><a href="signup.html" class="btn">SIGNUP</a></li>
-                        <li><a href="index.html" class="btn">LOGOUT</a></li>                                 
-                    </ul>
-            </nav>
-            <section class="Create-record">
+            <div class="header">            
+                    <div class="app-name">
+                        <h1>iReporter!</h1>
+                    </div>
+                    <div class="usernav-bar">
+                        <ul>                 
+                            <li><a href="userprofile.html" class="btn">PROFILE</a></li>
+                            <li><a href="#" class="btn">RECORDS</a></li>
+                            <li><a href="index.html" class="btn">LOGOUT</a></li>
+        
+                        </ul>
+                    </div>
+                </div>
+            <div class="Create-record">
                     <form action="/index.html" class="login">
                         <h3>Create Record</h3>
                         <div><input type="text" placeholder="Record name" class="login-input"></div>
@@ -31,12 +36,12 @@
                         <input class="login-input" type="file" name="img"/>
                         <div><label class="text">Geolocation</label></div>
                         <div class="geolocation">
-                        <input type="text" id="latitude" placeholder="latitude" class="login-input" required/>
-                        <input type="text" id="latitude" placeholder="longitude" class="login-input" required/>
+                        <input type="text" id="latitude" placeholder="latitude" class="login-input"/>
+                        <input type="text" id="latitude" placeholder="longitude" class="login-input"/>
                         </div>  
                         <div><button type="submit" class = "login-button">Create</button></div>
                     </form>
-                </section>     
+            </div>     
     </div>    
 </body>
 </html>
