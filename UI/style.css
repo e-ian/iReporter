@@ -299,3 +299,31 @@ tr{
     color: white;
 }
 
+@media (max-width: 700px){
+    .nav-bar ul{
+        margin-left: 0;
+        flex-direction: row;
+        justify-content: left;
+    }
+    .header{
+        background-color: var(--prussian);
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        line-height: 20px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn{
+        color: white;
+        background: #093374;
+        padding: 0.3rem 0.7rem;
+        border: 0;
+        border-radius: 2px;
+    }
+
+    
+}
+
