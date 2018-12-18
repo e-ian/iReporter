@@ -98,18 +98,18 @@ a{
 .welcome{
     padding-top: 45px;
     width: 1200px;
-    margin-left: 100px;
+    margin-left: 70px;
 }
 .welcome h1{
     color: white;
     text-align: center;
     font-size: 60px;
     margin-top: 50px;
-    margin-left: 70px;
 }
 .report{
     margin-bottom: 10%;
 }
+
 h1{
     display: block;
     margin-block-start: 0.67em;
@@ -392,6 +392,11 @@ tr{
         flex-direction: row;
         justify-content: left;
     }
+    .usernav-bar ul{
+        margin-left: 0;
+        flex-direction: row;
+        justify-content: left;
+    }
     .header{
         display: flex;
         flex-direction: column;
@@ -462,6 +467,16 @@ tr{
         display: flex;
         flex-direction: column;
     }
+    .nav-bar ul{
+        margin-left: 0;
+        flex-direction: row;
+        justify-content: left;
+    }
+    .usernav-bar ul{
+        margin-left: 0;
+        flex-direction: row;
+        justify-content: left;
+    }
     .container{
         display: flex;
         flex-direction: column;
@@ -475,5 +490,45 @@ tr{
         height: 220vh;
         width: fit-content;
     }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;       
+    }
 } 
+@media(max-width: 480px){
+    .RedFlags{ 
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-bar ul{
+        margin-left: 0;
+        flex-direction: row;
+        justify-content: left;
+    }
+    .usernav-bar ul{
+        margin-left: 0;
+        flex-direction: row;
+        justify-content: left;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 310vh;
+        justify-content: center;
+        width: fit-content;
+    }
+    .container-edit{
+        display: flex;
+        flex-direction: column;
+        height: 220vh;
+        width: fit-content;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;       
+    }
+
+}
 
