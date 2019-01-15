@@ -339,7 +339,7 @@ tr{
     .container-edit{
         display: flex;
         flex-direction: column;
-        height: 170vh;
+        height: 150vh;
     }
     .Create-record{
         margin-top: 70%;
