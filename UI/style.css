@@ -28,7 +28,6 @@ a{
 .usernav-bar{
     font-family: 'Courier New', Courier, monospace;
     font-size: 18px;
-
 }
 .nav-bar ul{    
     display: flex;
@@ -42,6 +41,12 @@ a{
     margin-left: 65%;
     padding: 16px;
 }
+.usernav-bar2 ul{
+    display: flex;
+    flex-direction: row;
+    margin-left: 90%;
+    padding: 16px;
+}
 .nav-bar li{
     width: 100px;
     height: 40px;    
@@ -49,6 +54,12 @@ a{
     padding: 25px 2px;
 }
 .usernav-bar li{
+    width: 120px;
+    height: 40px;    
+    list-style: none;
+    padding: 25px 2px;
+}
+.usernav-bar2 li{
     width: 120px;
     height: 40px;    
     list-style: none;
@@ -147,6 +158,17 @@ p{
     padding: 0.2rem 2.6rem;
     border: 0;
 }
+.group-btn{
+    color: white;
+    background: blue;
+    padding: 0.2rem 1.3rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 80px;
+}
+.group-btn:hover{
+    background: red;
+}
 .cat-btn:hover{
     background: black;
 }
@@ -237,7 +259,7 @@ p{
 .Create-record{
     margin-top: 20%;
     width: 520px;
-    height: 540px;
+    height: 560px;
     background:var(--slategray);
     color: black;
     top: 30%;
