@@ -321,7 +321,18 @@ tr{
 
 }
 .Usercolumn {
-    margin-right: 10%;
+    margin-right: 5%;
+    margin-left: 2%;
+}
+.Usercolumn h2{
+    text-align: center;
+}
+.Usercolumn2{
+    margin-right: 5%;
+    margin-top: 5%;
+}
+.Usercolumn2 h2{
+    text-align: center;
 }
 .Admin-table {
     margin-left: 10px;
