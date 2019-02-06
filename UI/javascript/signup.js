@@ -7,7 +7,7 @@ function Signup() {
         email: document.getElementById("email").value,
         role: document.getElementById("role").value
     }
-
+    
     fetch('http://127.0.0.1:5000/api/v1/auth/signup', {
         method: 'POST',
         body: JSON.stringify(register),
