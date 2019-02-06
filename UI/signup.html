@@ -17,14 +17,18 @@
             </ul>
         </nav>
         <section class="login-div">
-            <form action="/login.html" class="signup">
+            <form class="signup" onsubmit="return false">
                 <h3>SignUp</h3>
-                <div><input type="text" placeholder="firstname" class="login-input"></div>
-                <div><input type="text" placeholder="lastname" class="login-input"></div>
-                <div><input type="text" placeholder="username" class="login-input"></div>        
-                <div><input type="password" placeholder="password" class="login-input"></div>           
-                <div><button type="submit" class = "login-button">SignUp</button></div>
+                <p id="error"></p>
+                <div><input type="text" id="firstname" placeholder="firstname" class="login-input"></div>
+                <div><input type="text" id="lastname" placeholder="lastname" class="login-input"></div>
+                <div><input type="text" id="username" placeholder="username" class="login-input"></div>        
+                <div><input type="password" id="password" placeholder="password" class="login-input"></div>
+                <div><input type="email" id="email" placeholder="email" class="login-input"></div>
+                <div><input type="role" id="role" placeholder="role" class="login-input"></div>
+                <div><input type="button" class="login-button" onclick="Signup()" value="Signup" /></div>  
             </form>
+            <script src="javascript/signup.js"></script>
         </section>
      
     </div>    
