@@ -1,22 +1,60 @@
 function login(){
-    username = document.getElementById("username").value;
-    password = document.getElementById("password").value;
+    var login_credentials = {
+        username : document.getElementById("username").value,
+        password : document.getElementById("password").value
+    }
+    username = document.getElementById("username").value
+    fetch('http://127.0.0.1:5000/api/v1/auth/login', {
+        method: 'POST',
+        body: JSON.stringify(login_credentials),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(function (res){
+            console.log(res)
+            return res.json();
+        })
+        .then(function (response){
+            var response_data = response
+            if (response_data.status === 400){
+                document.getElementById('error').innerHTML = `${response_data.message}`
+            }
+            else if (username === "ogwal") {
+                window.alert('Admin logged in successfully')
+                console.log(response_data.access_token)
+                setCookie("access_token", response_data.access_token, 7)
+                window.location.href = "admin.html";                                
+            }
+            else if (response_data.status === 200) {
+                window.alert('login successful')
+                console.log(response_data.access_token)
+                setCookie("access_token", response_data.access_token, 7)
+                window.location.href = "userprofile.html";
+            }
+        })
+}
 
-    if (username == "" && password == ""){
-        document.getElementById("msg").innerHTML = "Input all required fields for username and password";
-    }
-    else if(username == ""){
-        document.getElementById("msg").innerHTML = "Input your username";
-    }
-    else if(password == ""){
-        document.getElementById("msg").innerHTML = "Input your password"
-    }
-    else{
-        if(username == "admin" && password == "ogwal123"){
-            window.location.href ="admin.html";
+function setCookie(access_token, value, expiry){
+    var delay = new Date();
+    delay.setTime(delay.getTime() + (expiry * 60 * 60 * 1000));
+    var expires = "expires=" + delay.toUTCString();
+    document.cookie = access_token + "=" + expires + ";path=/";
+}
+
+function getCookie(access_token){
+    var name = access_token + "=";
+    var ca = document.cookie.split(';');
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';')
+    for(var i =0; i <ca.length; i++){
+        var c = ca[i];
+        while (c.charAt(0) == ' '){
+            c = c.substring(1);
         }
-        else if(username == "user" && password == "emma123"){
-            window.location.href = "userprofile.html";
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length)
         }
     }
+    return "";
 }
