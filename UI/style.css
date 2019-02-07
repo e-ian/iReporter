@@ -44,7 +44,7 @@ a{
 .usernav-bar2 ul{
     display: flex;
     flex-direction: row;
-    margin-left: 90%;
+    margin-left: 70%;
     padding: 16px;
 }
 .nav-bar li{
@@ -175,7 +175,7 @@ p{
 .btn{
     color: white;
     background: #093374;
-    padding: 0.6rem 1.3rem;
+    padding: 0.6rem 1rem;
     border: 0;
     border-radius: 4px;    
 }
@@ -394,6 +394,7 @@ tr{
         padding: 0.3rem 0.7rem;
         border: 0;
         border-radius: 2px;
+        margin-right: 40px;
     }
     .welcome{
         padding-top: 20px;
