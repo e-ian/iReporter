@@ -16,8 +16,9 @@
             </ul>
         </nav>
         <section class="login1-div">
-            <form action="/index.html" class="login">
+            <form class="login" onsubmit="return false">
                 <h3>login</h3>
+                <p id="error"></p>
                 <div><input type="text" id="username" placeholder="username" class="login-input"></div>
                 <div><input type="password" id="password" placeholder="password" class="login-input"></div>
                 <div><input type="button" class="login-button" onclick="login()" value="login" /></div>
