@@ -23,38 +23,38 @@ function login(){
             else if (username === "ogwal") {
                 window.alert('Admin logged in successfully')
                 console.log(response_data.access_token)
-                setCookie("access_token", response_data.access_token, 7)
+                localStorage.setItem("access_token", response_data.access_token)
                 window.location.href = "admin.html";                                
             }
             else if (response_data.status === 200) {
                 window.alert('login successful')
                 console.log(response_data.access_token)
-                setCookie("access_token", response_data.access_token, 7)
+                localStorage.setItem("access_token", response_data.access_token)
                 window.location.href = "userprofile.html";
             }
         })
 }
 
-function setCookie(access_token, value, expiry){
-    var delay = new Date();
-    delay.setTime(delay.getTime() + (expiry * 60 * 60 * 1000));
-    var expires = "expires=" + delay.toUTCString();
-    document.cookie = access_token + "=" + expires + ";path=/";
-}
+// function setCookie(access_token, value, expiry){
+//     var delay = new Date();
+//     delay.setTime(delay.getTime() + (expiry * 60 * 60 * 1000));
+//     var expires = "expires=" + delay.toUTCString();
+//     document.cookie = access_token + "=" + expires + ";path=/";
+// }
 
-function getCookie(access_token){
-    var name = access_token + "=";
-    var ca = document.cookie.split(';');
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';')
-    for(var i =0; i <ca.length; i++){
-        var c = ca[i];
-        while (c.charAt(0) == ' '){
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length)
-        }
-    }
-    return "";
-}
+// function getCookie(access_token){
+//     var name = access_token + "=";
+//     var ca = document.cookie.split(';');
+//     var decodedCookie = decodeURIComponent(document.cookie);
+//     var ca = decodedCookie.split(';')
+//     for(var i =0; i <ca.length; i++){
+//         var c = ca[i];
+//         while (c.charAt(0) == ' '){
+//             c = c.substring(1);
+//         }
+//         if (c.indexOf(name) == 0) {
+//             return c.substring(name.length, c.length)
+//         }
+//     }
+//     return "";
+// }
