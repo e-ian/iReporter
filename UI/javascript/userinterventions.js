@@ -110,3 +110,26 @@ function editInterventionComment(){
         window.location.replace('userinterventions.html')
     })
 }
+
+function editInterventionLocation(){
+    var patch_location = {
+        location: document.getElementById("location").value
+    }
+    intervention_id = document.getElementById("intervention_id").value
+    fetch(`http://127.0.0.1:5000/api/v1/interventions/${intervention_id}/location`,{
+        method: 'PATCH',
+        body: JSON.stringify(patch_location),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`
+        }
+    })
+    .then(res => res.json())
+    .then(response => {
+        console.log(response)
+        if (response.status === 200){
+            document.getElementById('msg').innerHTML = `${response.message}`            
+        }
+        window.location.replace('userinterventions.html')
+    })
+}
