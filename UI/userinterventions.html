@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">            
+                <div class="app-name">
+                    <h1><a href="index.html" class="logo">iReporter!</a></h1>
+                </div>
+                <div class="usernav-bar">
+                    <ul>
+                        <li><a href="user.html" class="btn">Create</a></li>
+                        <li><a href="userprofile.html" class="btn">RedFlags</a></li>
+                        <li><a href="userinterventions.html" class="btn">Interventions</a></li>
+                        <li><a href="index.html" class="btn">LogOut</a></li>    
+                    </ul>
+                </div>
+            </div>
+            <div class="Topsearch">
+                    <h2>Search</h2>
+                </div>
+                <div id = "popUp">
+                    <input type="number" id="incidentSearch" placeholder="Get specific intervention">
+                    <button class="btn" id="getSpecific">Get Intervention</button>
+                </div>
+            <div class="RedFlags">
+                <div class="Usercolumn">
+                    <h2>Recent Interventions summary</h2>
+                    <table id="UserInterventions">
+
+                    </table>
+                </div>
+                <div class="Usercolumn2">
+                        <img src="images/profilepic.png" alt="Profile" style="width:200px;height:200px">
+                        <div class="text"><h4>Emma Ian</h4></div>
+                        <h2>User Statistics</h2>
+                    <table>
+                        <tr>
+                            <th>Action</th>
+                            <th>Number</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>RedFlags</td>
+                            <td>07</td>
+                            <td>Resolved</td>                                
+                        </tr>
+                        <tr>
+                            <td>Interventions</td>
+                            <td>10</td>
+                            <td>under investigation</td>                                
+                        </tr>
+                        <tr>
+                            <td>RedFlags</td>
+                            <td>15</td>
+                            <td>Draft</td>                                
+                        </tr>
+                        <tr>
+                            <td>RedFlags</td>
+                            <td>09</td>
+                            <td>Rejected</td>                                
+                        </tr>
+                        <tr>
+                            <td>Interventions</td>
+                            <td>03</td>
+                            <td>Resolved</td>                                
+                        </tr>
+                        <tr>
+                            <td>Interventions</td>
+                            <td>10</td>
+                            <td>Draft</td>                                
+                        </tr>
+                    </table>
+                </div>
+            </div>               
+        </div>
+    <script src="javascript/userinterventions.js"></script>
+</body>
+</html>
+
