@@ -1,9 +1,9 @@
-getRedflags();
-function getRedflags() {
-    let regflagsUrl = "http://127.0.0.1:5000/api/v1/redflags";
+getUserRedflags();
+function getUserRedflags() {
+    let userregflagsUrl = "http://127.0.0.1:5000/api/v1/redflags";
     token = localStorage.getItem('access_token')
     console.log(token)
-    fetch(regflagsUrl, {
+    fetch(userregflagsUrl, {
         headers: {
             'Content_type': 'application/json',
             'Authorization': `${token}`
@@ -13,7 +13,7 @@ function getRedflags() {
     .then(response => {
         console.log(response)
         let output = `
-        <tr class="Admin-table">
+        <tr class="Usercolumn">
             <th>comment</th>
             <th>created_by</th>
             <th>created_on</th>
@@ -35,19 +35,18 @@ function getRedflags() {
             <td>${response['redflag_list'][k].redflag_id}</td>
             <td>${response['redflag_list'][k].status}</td>
             </tr>`}
-            document.getElementById('Redflags').innerHTML = output;
+            document.getElementById('UserRedflags').innerHTML = output;
         });
 
 }
 
-// getting a specific redflag by id
-document.getElementById('getSpecific').onclick = function getSpecificredflag(){
+document.getElementById('getSpecific').onclick = function getUserSpecificredflag(){
     let redflag_id = document.getElementById('incidentSearch').value;
     console.log(redflag_id)
-    let specRedflagsURL = `http://127.0.0.1:5000/api/v1/redflags/${redflag_id}`;
-    console.log(specRedflagsURL)
+    let UserspecRedflagsURL = `http://127.0.0.1:5000/api/v1/redflags/${redflag_id}`;
+    console.log(UserspecRedflagsURL)
     token = localStorage.getItem('access_token')
-    fetch(specRedflagsURL, {
+    fetch(UserspecRedflagsURL, {
         headers: {
             'Content_type': 'application/json',
             'Authorization': `${token}`
@@ -73,8 +72,10 @@ document.getElementById('getSpecific').onclick = function getSpecificredflag(){
                     <p>redflag_id: ${response['redflag'].redflag_id}</p>
                     <p>status: ${response['redflag'].status}</p>
                     <input id="redflag_id" value=${redflag_id} class="login-input">
-                    <input type="text" id="status" placeholder="input status" class="login-input">
-                    <input type="button" class="btn" onclick="editRedflagStatus()" value="edit status">
+                    <input type="text" id="comment" placeholder="edit comment" class="login-input">
+                    <input type="text" id="location" placeholder="edit location" class="login-input">
+                    <input type="button" class="btn" onclick="editRedflagComment()" value="edit comment">
+                    <input type="button" class="btn" onclick="editRedflagLocation()" value="edit location">
                     </form>
                 </div>`;
                 console.log(output);         
@@ -85,15 +86,14 @@ document.getElementById('getSpecific').onclick = function getSpecificredflag(){
     })
 }
 
-function editRedflagStatus(){
-    var update_status = {
-        intervention_id: document.getElementById("redflag_id").value,
-        status: document.getElementById("status").value
+function editRedflagComment(){
+    var update_comment = {
+        comment: document.getElementById("comment").value
     }
     redflag_id = document.getElementById("redflag_id").value
-    fetch(`http://127.0.0.1:5000/api/v1/redflags/${redflag_id}/status`,{
+    fetch(`http://127.0.0.1:5000/api/v1/redflags/${redflag_id}/comment`,{
         method: 'PATCH',
-        body: JSON.stringify(update_status),
+        body: JSON.stringify(update_comment),
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `${token}`
@@ -104,8 +104,30 @@ function editRedflagStatus(){
         console.log(response)
         if (response.status === 200){
             document.getElementById('msg').innerHTML = `${response.message}`
-            window.alert('Updated interventions status');
-            window.location.replace('admin.html')
+            window.location.replace('userprofile.html')
+        }
+    })
+}
+
+function editRedflagLocation(){
+    var update_location = {
+        location: document.getElementById("location").value
+    }
+    redflag_id = document.getElementById("redflag_id").value
+    fetch(`http://127.0.0.1:5000/api/v1/redflags/${redflag_id}/location`,{
+        method: 'PATCH',
+        body: JSON.stringify(update_location),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`
+        }
+    })
+    .then(res => res.json())
+    .then(response => {
+        console.log(response)
+        if (response.status === 200){
+            document.getElementById('msg').innerHTML = `${response.message}`
+            window.location.replace('userprofile.html')
         }
     })
 }

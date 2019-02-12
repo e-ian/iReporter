@@ -102,10 +102,10 @@ function editInterventionStatus(){
     .then(res => res.json())
     .then(response => {
         console.log(response)
-        if (response.message === 'Updates interventions status'){
+        if (response.status === 200){
             document.getElementById('msg').innerHTML = `${response.message}`
             window.alert('Updated interventions status');
-            window.location.replace('interventions.html')
+            window.location.href='interventions.html'
         }
     })
 }
