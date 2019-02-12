@@ -1,3 +1,4 @@
+// getting all interventions
 getInterventions();
 function getInterventions() {
     let interventionsUrl = "http://127.0.0.1:5000/api/v1/interventions";
@@ -40,6 +41,7 @@ function getInterventions() {
 
 }
 
+// getting a specific intervention by id
 document.getElementById('getSpecific').onclick = function getSpecificIntervention(){
     let intervention_id = document.getElementById('incidentSearch').value;
     console.log(intervention_id)
@@ -51,8 +53,7 @@ document.getElementById('getSpecific').onclick = function getSpecificInterventio
             'Content_type': 'application/json',
             'Authorization': `${token}`
         }
-    })
-    
+    })    
     .then(res => res.json())
     .then(response => {
         console.log(response)
@@ -72,13 +73,39 @@ document.getElementById('getSpecific').onclick = function getSpecificInterventio
                     <p>location: ${response['intervention'].location}</p>
                     <p>intervention_id: ${response['intervention'].intervention_id}</p>
                     <p>status: ${response['intervention'].status}</p>
-                    <button type="submit" class="btn" value="edit">Edit status</button>
+                    <input id="intervention_id" value=${intervention_id} class="login-input">
+                    <input type="text" id="status" placeholder="input status" class="login-input">
+                    <input type="button" class="btn" onclick="editInterventionStatus()" value="edit status">
                     </form>
                 </div>`;
-                console.log(output);         
-            
+                console.log(output);
             document.getElementById('popUp').innerHTML = output;
             document.getElementById('popUp').style.display = 'block';
+        }
+    })
+}
+
+function editInterventionStatus(){
+    var status_update = {
+        intervention_id: document.getElementById("intervention_id").value,
+        status: document.getElementById("status").value
+    }
+    intervention_id = document.getElementById("intervention_id").value
+    fetch(`http://127.0.0.1:5000/api/v1/interventions/${intervention_id}/status`,{
+        method: 'PATCH',
+        body: JSON.stringify(status_update),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`
+        }
+    })
+    .then(res => res.json())
+    .then(response => {
+        console.log(response)
+        if (response.message === 'Updates interventions status'){
+            document.getElementById('msg').innerHTML = `${response.message}`
+            window.alert('Updated interventions status');
+            window.location.replace('interventions.html')
         }
     })
 }

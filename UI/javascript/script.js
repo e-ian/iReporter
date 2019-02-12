@@ -35,26 +35,3 @@ function login(){
         })
 }
 
-// function setCookie(access_token, value, expiry){
-//     var delay = new Date();
-//     delay.setTime(delay.getTime() + (expiry * 60 * 60 * 1000));
-//     var expires = "expires=" + delay.toUTCString();
-//     document.cookie = access_token + "=" + expires + ";path=/";
-// }
-
-// function getCookie(access_token){
-//     var name = access_token + "=";
-//     var ca = document.cookie.split(';');
-//     var decodedCookie = decodeURIComponent(document.cookie);
-//     var ca = decodedCookie.split(';')
-//     for(var i =0; i <ca.length; i++){
-//         var c = ca[i];
-//         while (c.charAt(0) == ' '){
-//             c = c.substring(1);
-//         }
-//         if (c.indexOf(name) == 0) {
-//             return c.substring(name.length, c.length)
-//         }
-//     }
-//     return "";
-// }
