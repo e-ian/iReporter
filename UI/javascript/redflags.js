@@ -72,14 +72,40 @@ document.getElementById('getSpecific').onclick = function getSpecificredflag(){
                     <p>location: ${response['redflag'].location}</p>
                     <p>redflag_id: ${response['redflag'].redflag_id}</p>
                     <p>status: ${response['redflag'].status}</p>
+                    <input id="redflag_id" value=${redflag_id} class="login-input">
                     <input type="text" id="status" placeholder="input status" class="login-input">
-                    <button type="submit" class="btn">submit</button>
+                    <input type="button" class="btn" onclick="editRedflagStatus()" value="edit status">
                     </form>
                 </div>`;
                 console.log(output);         
             
             document.getElementById('popUp').innerHTML = output;
             document.getElementById('popUp').style.display = 'block';
+        }
+    })
+}
+
+function editRedflagStatus(){
+    var update_status = {
+        intervention_id: document.getElementById("redflag_id").value,
+        status: document.getElementById("status").value
+    }
+    redflag_id = document.getElementById("redflag_id").value
+    fetch(`http://127.0.0.1:5000/api/v1/redflags/${redflag_id}/status`,{
+        method: 'PATCH',
+        body: JSON.stringify(update_status),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`
+        }
+    })
+    .then(res => res.json())
+    .then(response => {
+        console.log(response)
+        if (response.status === 200){
+            document.getElementById('msg').innerHTML = `${response.message}`
+            window.alert('Updated interventions status');
+            window.location.replace('admin.html')
         }
     })
 }
