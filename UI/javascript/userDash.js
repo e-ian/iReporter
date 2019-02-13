@@ -103,9 +103,9 @@ function editRedflagComment(){
     .then(response => {
         console.log(response)
         if (response.status === 200){
-            document.getElementById('msg').innerHTML = `${response.message}`
-            window.location.replace('userprofile.html')
+            document.getElementById('msg').innerHTML = `${response.message}`            
         }
+        window.location.replace('userprofile.html')
     })
 }
 
@@ -127,7 +127,7 @@ function editRedflagLocation(){
         console.log(response)
         if (response.status === 200){
             document.getElementById('msg').innerHTML = `${response.message}`
-            window.location.replace('userprofile.html')
         }
+        window.location.replace('userprofile.html')
     })
 }

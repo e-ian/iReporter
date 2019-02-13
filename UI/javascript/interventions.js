@@ -104,8 +104,8 @@ function editInterventionStatus(){
         console.log(response)
         if (response.status === 200){
             document.getElementById('msg').innerHTML = `${response.message}`
-            window.alert('Updated interventions status');
-            window.location.href='interventions.html'
+            window.alert('Updated interventions status');            
         }
+        window.location.href='interventions.html'
     })
 }
