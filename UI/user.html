@@ -16,32 +16,25 @@
                     <div class="usernav-bar">
                         <ul>                 
                             <li><a href="userprofile.html" class="btn">PROFILE</a></li>
-                            <li><a href="records.html" class="btn">RECORDS</a></li>
+                            <!-- <li><a href="records.html" class="btn">RECORDS</a></li> -->
                             <li><a href="index.html" class="btn">LOGOUT</a></li>
         
                         </ul>
                     </div>
                 </div>
             <div class="Create-record">
-                    <form action="/records.html" class="login">
-                        <h3>Create Record</h3>
-                        <div><label class="text">Date</label></div>
-                        <div><input type="date" placeholder="Date of record" class="login-input"></div>
-                        <div><label class="text">Description</label></div>
-                        <div><textarea type="text" placeholder="Description of record" class="login-input-des"></textarea></div>
-                        <div><label class="text">Incident type</label></div>
-                        <select class="login-input">
-                                <option value="RedFlag">RedFlag</option>
-                                <option value="Intervention">Intervention</option>
-                            </select>
-                        <div class="text">Upload Image</div>
-                        <input class="login-input" type="file" name="img"/>
-                        <div><label class="text">location</label></div>
-                        <div class="geolocation">
-                        <input type="text" id="latitude" placeholder="location" class="login-input"/>
-                        </div>  
-                        <div><button type="submit" class = "login-button">Create</button></div>
-                    </form>
+                <form action="/records.html" class="login">
+                    <h3>Create Record</h3>
+                    <p id="mssg"></p>
+                    <div><input type="text" id="incident_type" placeholder="incident_type" class="login-input"></div>
+                    <div><input type="text" id="location" placeholder="location" class="login-input"></div>
+                    <div><input type="text" id="status" placeholder="status" class="login-input"></div>
+                    <div><input type="file" id="image" placeholder="image" class="login-input"></div>
+                    <div><input type="text" id="comment" placeholder="comment" class="login-input"></div>
+                    <div><input type="button" class="login-button" onclick="CreateRedflag()" value="Create" /></div>
+
+                </form>
+                <script src="javascript/userDash.js"></script>
             </div>     
     </div>    
 </body>
