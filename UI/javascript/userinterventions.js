@@ -133,3 +133,30 @@ function editInterventionLocation(){
         window.location.replace('userinterventions.html')
     })
 }
+
+CreateIntervention();
+function CreateIntervention(){
+    var post_intervention = {
+        incident_type: document.getElementById("incident_type").value,
+        location: document.getElementById("location").value,
+        status: document.getElementById("status").value,
+        image: document.getElementById("image").value,
+        comment: document.getElementById("comment").value
+    }
+    fetch(`http://127.0.0.1:5000/api/v1/interventions`,{
+        method: 'POST',
+        body: JSON.stringify(post_intervention),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`
+        }
+    })
+    .then(res => res.json())
+    .then(response => {
+        console.log(response)
+        if (response.status === 201){
+            document.getElementById('mssg').innerHTML = `${response.message}`
+        }
+        window.location.replace('interventions.html')
+        })
+}
