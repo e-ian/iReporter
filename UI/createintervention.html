@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UserPage</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="container-edit">
+            <div class="header">            
+                    <div class="app-name">
+                        <h1><a href="index.html" class="logo">iReporter!</a></h1>
+                    </div>
+                    <div class="usernav-bar">
+                        <ul>                 
+                            <li><a href="userprofile.html" class="btn">Profile</a></li>
+                            <li><a href="index.html" class="btn">LOGOUT</a></li>
+        
+                        </ul>
+                    </div>
+                </div>
+            <div class="Create-record">
+                <form class="login">
+                    <h3>Create Record</h3>
+                    <p id="mssg"></p>
+                    <div><input type="text" id="incident_type" placeholder="incident_type" class="login-input"></div>
+                    <div><input type="text" id="location" placeholder="location" class="login-input"></div>
+                    <div><input type="text" id="status" placeholder="status" class="login-input"></div>
+                    <div><input type="file" id="image" placeholder="image" class="login-input"></div>
+                    <div><input type="text" id="comment" placeholder="comment" class="login-input"></div>
+                    <div><input type="button" class="login-button" onclick="CreateIntervention()" value="Create Intervention" /></div>
+
+                </form>
+                <script src="javascript/userinterventions.js"></script>
+            </div>     
+    </div>    
+</body>
+</html>
+
