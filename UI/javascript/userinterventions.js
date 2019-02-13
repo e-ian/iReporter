@@ -157,6 +157,6 @@ function CreateIntervention(){
         if (response.status === 201){
             document.getElementById('mssg').innerHTML = `${response.message}`
         }
-        window.location.replace('interventions.html')
+        window.location.replace('userprofile.html')
         })
 }
