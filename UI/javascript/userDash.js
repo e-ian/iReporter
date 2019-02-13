@@ -76,6 +76,7 @@ document.getElementById('getSpecific').onclick = function getUserSpecificredflag
                     <input type="text" id="location" placeholder="edit location" class="login-input">
                     <input type="button" class="btn" onclick="editRedflagComment()" value="edit comment">
                     <input type="button" class="btn" onclick="editRedflagLocation()" value="edit location">
+                    <input type="button" class="deletebtn" onclick="deleteRedflag()" value="delete redflag">
                     </form>
                 </div>`;
                 console.log(output);         
@@ -157,4 +158,27 @@ function CreateRedflag(){
         }
         window.location.replace('userprofile.html')
         })
+}
+
+deleteRedflag();
+function deleteRedflag(){
+    redflag_id = document.getElementById("redflag_id").value
+    let DelURL = `http://127.0.0.1:5000/api/v1/redflags/${redflag_id}`;
+    console.log(DelURL)
+    fetch(DelURL, {
+        method: 'DELETE',
+        headers:{
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`
+        }
+    })
+    .then(res => res.json())
+    .then(response => {
+        if (response.status === 200){
+            // document.getElementById('msg').innerHTML = `${response.message}`
+        }
+        window.location.replace('userprofile.html')
+    })
+
+
 }
