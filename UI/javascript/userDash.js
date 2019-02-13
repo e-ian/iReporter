@@ -131,3 +131,30 @@ function editRedflagLocation(){
         window.location.replace('userprofile.html')
     })
 }
+
+CreateRedflag();
+function CreateRedflag(){
+    var post_redflag = {
+        incident_type: document.getElementById("incident_type").value,
+        location: document.getElementById("location").value,
+        status: document.getElementById("status").value,
+        image: document.getElementById("image").value,
+        comment: document.getElementById("comment").value
+    }
+    fetch(`http://127.0.0.1:5000/api/v1/redflags`,{
+        method: 'POST',
+        body: JSON.stringify(post_redflag),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`
+        }
+    })
+    .then(res => res.json())
+    .then(response => {
+        console.log(response)
+        if (response.status === 201){
+            document.getElementById('mssg').innerHTML = `${response.message}`
+        }
+        window.location.replace('userprofile.html')
+        })
+}
