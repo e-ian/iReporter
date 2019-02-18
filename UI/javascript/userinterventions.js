@@ -181,6 +181,4 @@ function deleteIntervention(){
         }
         window.location.replace('userprofile.html')
     })
-
-
 }
