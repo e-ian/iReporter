@@ -20,11 +20,11 @@ resolved).
 ## The UI of the application is hosted on gh-pages and can be accessed using the link https://e-ian.github.io/iReporter/UI/index.html
 
 # Login credentials:
-## For admin
-`username: admin`
-`password: ogwal123`
+## For admin - Only one initial registered admin is allowed access for security reasons
+`username: ogwal`
+`password: Ogwal123`
 
-## For user
+## For user- You can sign up and log in as a new user
 `username: user`
 `password: emma123`
 
@@ -32,6 +32,8 @@ resolved).
  ```git clone https://github.com/e-ian/iReporter.git ```
  
 ## Stories of the design are on this https://www.pivotaltracker.com/n/projects/2232188 link on pivotal tracker
+
+## The backend app is deployed on heroku at https://eian-ireporter.herokuapp.com/
 
 # Author
 Emmanuel Ogwal
