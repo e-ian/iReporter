@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Statistics</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">            
+                <div class="app-name">
+                    <h1><a href="index.html" class="logo">iReporter!</a></h1>
+                </div>
+                <div class="usernav-bar">
+                    <ul>
+                        <li><a href="user.html" class="btn">Create redflag</a></li>
+                        <li><a href="createintervention.html" class="btn">Create intervention</a></li>
+                        <li><a href="userprofile.html" class="btn">RedFlags</a></li>
+                        <li><a href="userinterventions.html" class="btn">Interventions</a></li>
+                        <li><a href="index.html" class="btn">LogOut</a></li>    
+                    </ul>
+                </div>
+            </div>
+                <div class="RedFlags">
+                        <img src="images/profilepic.png" alt="Profile" style="width:200px;height:200px">
+                    <div>
+                        <h2>Redflag Statistics</h2>
+                            <table>
+                                <tr>
+                                <th>draft</th>
+                                <th>under investigation</th>
+                                <th>resolved</th>
+                                <th>rejected</th>
+                                </tr>
+                                <tr id="flagstats">
+                                </tr>                                    
+                            </table>
+                        <h2>Intervention Statistics</h2>
+                        <table>
+                                <tr>
+                                    <th>draft</th>
+                                    <th>under investigation</th>
+                                    <th>resolved</th>
+                                    <th>rejected</th>
+                                </tr>
+                                <tr id="intstats">
+
+                                </tr>                                    
+                            </table>
+                    </div>
+                    
+                </div>
+        </div>               
+    </div>
+    <!-- <script src="javascript/userDash.js"></script> -->
+    <script src="javascript/userstats.js"></script>
+</body>
+</html>
+

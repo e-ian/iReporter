@@ -63,6 +63,7 @@ document.getElementById('getSpecific').onclick = function getUserSpecificinterve
             let output = ''            
                 output += `
                 <div class="Create-record">
+                <span class="close">&times;</span>
                     <form id="IntForm" method="PUT">
                     <h2>Intervention: ${intervention_id}</h2>
                     <p>comment: ${response['intervention'].comment}</p>
