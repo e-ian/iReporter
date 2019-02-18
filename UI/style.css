@@ -94,18 +94,20 @@ a{
     background-position: center;
 }
 .container{
-    background-image: linear-gradient(
+    /* background-image: linear-gradient(
         rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)),url(images/login.jpg);
-    height: 160vh;
+        rgba(0,0,0,0.5)),url(images/login.jpg); */
+    background: #f9f8fd;
+    /* height: 160vh; */
     background-size: cover;
     background-position: center;
 }
 .container-edit{
-    background-image: linear-gradient(
+    /* background-image: linear-gradient(
         rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)),url(images/login.jpg);
-    height: 130vh;
+        rgba(0,0,0,0.5)),url(images/login.jpg); */
+    background: #f9f8fd;
+    /* height: 130vh; */
     background-size: cover;
     background-position: center;
 }
@@ -193,7 +195,7 @@ p{
 .login1-div{
     width: 320px;
     height: 300px;
-    background:var(--slategray);
+    background: #eeeeee;;
     color: black;
     top: 50%;
     left: 48%;
@@ -245,7 +247,7 @@ p{
 .login-div{
     width: 320px;
     height: 470px;
-    background:var(--slategray);
+    background: #eeeeee;;
     color: black;
     top: 50%;
     left: 47%;
@@ -260,7 +262,7 @@ p{
     margin-top: 20%;
     width: 520px;
     height: 560px;
-    background:var(--slategray);
+    background: #eeeeee;
     color: black;
     top: 30%;
     left: 47%;
@@ -269,6 +271,9 @@ p{
     padding: 30px 30px;
     border-radius: 5px;  
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.close{
+    float: right;
 }
 #latitude{
     width: 98%;
@@ -304,11 +309,11 @@ p{
     margin-left: 10px;
 }
 .RedFlags h2{
-    color: white;
+    color: black;
     margin-left: 10px;
 }
 .Topsearch h2{
-    color: white;
+    color: black;
     margin-left: 65%;
 }
 #popUp{
@@ -321,7 +326,7 @@ p{
 }
 th{
     color: white;
-    background: blue;
+    background: var(--prussian);
 }
 td, th {
     border: 0.5px solid #708090;
@@ -390,7 +395,7 @@ tr{
         margin-bottom: 20%;
         width: 400px;
         height: 370px;
-        background:var(--slategray);
+        background: #eeeeee;
         color: black;
         top: 30%;
         left: 47%;
@@ -399,8 +404,7 @@ tr{
         padding: 30px 30px;
         border-radius: 5px;  
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
+    }    
     .btn{
         color: white;
         background: #093374;
@@ -458,7 +462,7 @@ tr{
         margin-top: 90%;
         width: 250px;
         height: 450px;
-        background:var(--slategray);
+        background: #eeeeee;
         color: black;
         top: 30%;
         left: 47%;
