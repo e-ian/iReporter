@@ -78,6 +78,7 @@ document.getElementById('getSpecific').onclick = function getUserSpecificinterve
                     <input type="text" id="location" placeholder="edit location" class="login-input">
                     <input type="button" class="btn" onclick="editInterventionComment()" value="edit comment">
                     <input type="button" class="btn" onclick="editInterventionLocation()" value="edit location">
+                    <input type="button" class="deletebtn" onclick="deleteIntervention()" value="delete intervention">
                     </form>
                 </div>`;
                 console.log(output);         
@@ -132,4 +133,54 @@ function editInterventionLocation(){
         }
         window.location.replace('userinterventions.html')
     })
+}
+
+CreateIntervention();
+function CreateIntervention(){
+    var post_intervention = {
+        incident_type: document.getElementById("incident_type").value,
+        location: document.getElementById("location").value,
+        status: document.getElementById("status").value,
+        image: document.getElementById("image").value,
+        comment: document.getElementById("comment").value
+    }
+    fetch(`http://127.0.0.1:5000/api/v1/interventions`,{
+        method: 'POST',
+        body: JSON.stringify(post_intervention),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`
+        }
+    })
+    .then(res => res.json())
+    .then(response => {
+        console.log(response)
+        if (response.status === 201){
+            document.getElementById('mssg').innerHTML = `${response.message}`
+        }
+        window.location.replace('userprofile.html')
+        })
+}
+
+deleteIntervention();
+function deleteIntervention(){
+    intervention_id = document.getElementById("intervention_id").value
+    let delURL = `http://127.0.0.1:5000/api/v1/interventions/${intervention_id}`;
+    console.log(delURL)
+    fetch(delURL, {
+        method: 'DELETE',
+        headers:{
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`
+        }
+    })
+    .then(res => res.json())
+    .then(response => {
+        if (response.status === 200){
+            // document.getElementById('msg').innerHTML = `${response.message}`
+        }
+        window.location.replace('userprofile.html')
+    })
+
+
 }
