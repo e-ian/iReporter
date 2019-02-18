@@ -41,6 +41,7 @@ function getUserRedflags() {
 }
 
 document.getElementById('getSpecific').onclick = function getUserSpecificredflag(){
+    let close = document.getElementsByClassName('close')[0];
     let redflag_id = document.getElementById('incidentSearch').value;
     console.log(redflag_id)
     let UserspecRedflagsURL = `http://127.0.0.1:5000/api/v1/redflags/${redflag_id}`;
@@ -61,6 +62,7 @@ document.getElementById('getSpecific').onclick = function getUserSpecificredflag
             let output = ''            
                 output += `
                 <div class="Create-record">
+                <span class="close">&times;</span>
                     <form id="IntForm" method="PUT">
                     <h2>Redflag: ${redflag_id}</h2>
                     <p>comment: ${response['redflag'].comment}</p>
@@ -85,6 +87,9 @@ document.getElementById('getSpecific').onclick = function getUserSpecificredflag
             document.getElementById('popUp').style.display = 'block';
         }
     })
+    close.onclick = function(){
+        Create-record.style.display == "none";
+    }
 }
 
 function editRedflagComment(){
