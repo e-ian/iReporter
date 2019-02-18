@@ -179,6 +179,4 @@ function deleteRedflag(){
         }
         window.location.replace('userprofile.html')
     })
-
-
 }
